@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coomer Maids</title>
+    <style>
+        /* Reset and Basic Styles */
+*, *:before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    padding-top: 60px; /* Space for the fixed header */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    flex: 1; /* Allows the content to expand and push the footer down */
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Header */
+header {
+    height: 10vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent; /* Make the header background transparent */
+    padding: 10px 0;
+    box-shadow: none; /* Remove shadow so it blends with the hero */
+    z-index: 1000;
+}
+
+header h1 {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Drop shadow */
+}
+
+header .container h1 {
+    display: flex;
+    align-items: center; /* To vertically align the SVG with the text */
+}
+
+.header-content {
+    display: flex;
+    align-items: center; /* Vertically aligns the SVG with the text */
+}
+
+.maid-icon {
+    height: 40px;  /* Adjust based on your design */
+    width: auto;
+    margin-left: 10px; /* Provides some spacing between the text and the SVG */
+}
+
+
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn.header-btn {
+    padding: 10px 20px; /* Resize the button */
+    margin-right: 20px; /* Space it from the right edge */
+}
+
+
+.btn {
+    padding: 10px 20px;
+    background: #50b3a2;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #439381;
+}
+
+/* Hero Section */
+/* ... Previous Styles ... */
+
+.hero {
+    color: #000;
+    padding: 50px 0;
+    text-align: center;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-top: -60px; /* Pull the hero section up to cover the header */
+    height: 40vh; /* Set hero height to 40% of the viewport height */
+    display: flex;
+    align-items: center; /* Vertically center the content */
+    justify-content: center; /* Horizontally center the content */
+    position: relative; /* Required for the positioning of the pseudo-element */
+    background: none; /* Remove the background from the main element */
+}
+
+.hero::before {
+    content: ""; /* Empty content to make the pseudo-element render */
+    position: absolute; /* Position the pseudo-element absolutely */
+    top: 0; left: 0; right: 0; bottom: 0; /* Stretch the pseudo-element to cover the entire hero */
+    background: url('https://storage.googleapis.com/gen-atmedia/2/2015/04/52b8d4825906632e7b3252aad33f37de5e3a9581.jpeg') center/cover no-repeat; /* Use the same background image */
+    filter: blur(3px); /* Apply the blur */
+    z-index: -1; /* Place the pseudo-element behind the main content */
+}
+
+.frequency-selection {
+    display: flex;
+    justify-content: space-around; /* Changed from space-between to space-around for less spacing */
+}
+
+.frequency-option {
+  color: white;
+    padding: 15px 25px; /* Increased padding for the frequency boxes */
+    border-radius: 5px;
+    background: #50b3a2; /* Reduced the opacity to 5% */
+    cursor: pointer;
+    transition: background 0.3s;
+    margin: 10px; /* Added margin to space the frequency boxes apart and from the dropdown */
+}
+
+.frequency-option.selected {
+    background: #3a7f70; /* Darker background for the selected frequency */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow to lift the selected option */
+}
+
+.btn {
+    display: block;
+    width: 100%; /* Full width to match the dropdown */
+    max-width: 600px; /* Same max-width as the dropdown */
+    margin: 20px auto 0; /* Centered with top margin for spacing */
+    text-align: center; /* Align text to the left */
+    padding: 15px 25px; /* Adjusted padding */
+    font-size: 22px !important;
+    text-decoration: none;
+}
+
+#estimatedPrice {
+    float: right; /* Float the price to the right side of the button */
+    font-size: 1em; /* Adjust font size to match button text */
+}
+
+.frequency-option:hover {
+    background: #439381; /* Darker on hover */
+}
+
+
+
+.form-group {
+    max-width: 600px; /* You can adjust this value to your preference */
+    margin: 0 auto;  /* Center the form-group elements */
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* ... Previous Styles ... */
+
+select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+
+
+
+/* Services Section */
+.services {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px; /* Added margin at the top of the services section */
+    margin-bottom: 50px;
+}
+
+.service-item {
+    flex: 1;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    text-align: center;
+    margin: 0 10px;
+}
+
+.service-icon {
+    font-size: 48px;
+    color: #50b3a2;
+    margin-bottom: 20px;
+}
+
+/* Testimonials Carousel Styles */
+.carousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    display: none;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-slide.active {
+    display: block;
+}
+
+.carousel-slide p {
+    font-style: italic;
+}
+
+.carousel-slide span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Responsive Header */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header h1, header .btn {
+        margin: 5px 0;
+    }
+
+    /* Responsive Services */
+    .services {
+        flex-direction: column;
+    }
+
+    .service-item {
+        margin: 10px 0;
+    }
+}
+
+/* ... Previous Styles ... */
+
+/* Carousel Arrows Styles */
+.carousel:hover .carousel-arrow {
+    opacity: 1;
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    opacity: 0.6;
+    z-index: 2;
+    transform: translateY(-50%); /* This line will vertically center the arrows */
+}
+
+.carousel-arrow-left {
+    left: 10px;
+}
+
+.carousel-arrow-right {
+    right: 10px;
+}
+
+.booking-instruction {
+    display: block;
+    font-size: 2em; /* Large font size */
+    font-weight: bold; /* Bold text */
+    color: white; /* White color */
+    width: 100%; /* Span the full width */
+    text-align: center; /* Center the text */
+    margin-bottom: 10px; /* Some space before the dropdown */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+          <h1>
+              Coomer Maids
+              <img src="maid-icon.svg" alt="Maid Icon" class="maid-icon">
+          </h1>
+      </div>
+  </header>
+  
+
+    <!-- Hero Section -->
+    <!-- Hero Section -->
+    <section class="hero">
+      <form id="estimateForm">
+          <div class="form-group">
+              <label for="apartmentLayout" class="booking-instruction">Book a trusted maid instantly below.</label>
+              <select id="apartmentLayout">
+                  <option value="studio">Studio</option>
+                  <option value="1bed1bath">1 bed/1 bath</option>
+                  <!-- Add more options as needed -->
+              </select>
+          </div>
+          <div class="form-group frequency-selection">
+              <div class="frequency-option" data-frequency="oneTime">One-time Cleaning</div>
+              <div class="frequency-option" data-frequency="twiceAMonth">Twice a Month (10% off)</div>
+              <div class="frequency-option" data-frequency="fourTimesAMonth">Four times a Month (20% off)</div>
+          </div>
+          <a href="https://testcompany.launch27.com/?w_cleaning" class="btn">
+              SCHEDULE AN APPOINTMENT <span id="estimatedPrice">$0.00</span>
+          </a>
+      </form>
+    </section>
+    
+
+
+
+
+
+    <!-- Services Section -->
+    <section class="services container">
+        <div class="service-item">
+            <div class="service-icon">&#x1F512;</div>
+            <h3>Regular Cleaning</h3>
+            <p>Keep your home sparkling with regular cleaning.</p>
+        </div>
+        <div class="service-item">
+            <div class="service-icon">&#x1F50D;</div>
+            <h3>Deep Cleaning</h3>
+            <p>Detailed cleaning for those special occasions.</p>
+        </div>
+        <div class="service-item">
+            <div class="service-icon">&#x1F3E2;</div>
+            <h3>Move-In/Move-Out Cleaning</h3>
+            <p>Making transitions smoother with clean spaces.</p>
+        </div>
+    </section>
+
+<!-- Testimonials Section -->
+<!-- Testimonials Section -->
+<section class="testimonials container">
+  <h2>What Our Customers Say</h2>
+  <div class="carousel">
+      <div class="carousel-slide active">
+          <p>"The best cleaning service I've ever used!"</p>
+          <span>- Jane Doe</span>
+      </div>
+      <div class="carousel-slide">
+          <p>"My home feels brand new after Coomer Maids visited."</p>
+          <span>- John Smith</span>
+      </div>
+      <!-- Navigation arrows -->
+      <div id="prevSlide" class="carousel-arrow carousel-arrow-left">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 18L9 12L15 6" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+      </div>
+      <div id="nextSlide" class="carousel-arrow carousel-arrow-right">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 18L15 12L9 6" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+      </div>
+  </div>
+</section>
+
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Coomer Maids. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
+
+<script>
+// Carousel functionality
+let currentSlide = 0;
+const slides = document.querySelectorAll('.carousel-slide');
+
+document.getElementById('nextSlide').addEventListener('click', function() {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % slides.length;
+    slides[currentSlide].classList.add('active');
+});
+
+document.getElementById('prevSlide').addEventListener('click', function() {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    slides[currentSlide].classList.add('active');
+});
+
+// Hero
+document.getElementById('estimateForm').addEventListener('click', function(event) {
+    if (event.target.classList.contains('frequency-option')) {
+        const frequency = event.target.getAttribute('data-frequency');
+        calculateEstimate(frequency);
+    }
+});
+
+function calculateEstimate(frequency) {
+    const layout = document.getElementById('apartmentLayout').value;
+
+    let basePrice = 0;
+    switch (layout) {
+        case 'studio':
+            basePrice = 50;
+            break;
+        case '1bed1bath':
+            basePrice = 70;
+            break;
+        // Add more cases as needed
+    }
+
+    let discount = 1;
+    switch (frequency) {
+        case 'oneTime':
+            discount = 1;
+            break;
+        case 'twiceAMonth':
+            discount = 0.9; // 10% off
+            break;
+        case 'fourTimesAMonth':
+            discount = 0.8; // 20% off
+            break;
+    }
+
+    const estimatedPrice = basePrice * discount;
+    document.getElementById('estimatedPrice').textContent = `$${estimatedPrice.toFixed(2)}/clean`;
+}
+
+document.querySelector('.frequency-option[data-frequency="oneTime"]').classList.add('selected');
+
+document.getElementById('estimateForm').addEventListener('click', function(event) {
+    if (event.target.classList.contains('frequency-option')) {
+        // Remove the selected class from all frequency options
+        document.querySelectorAll('.frequency-option').forEach(function(el) {
+            el.classList.remove('selected');
+        });
+        
+        // Add the selected class to the clicked frequency option
+        event.target.classList.add('selected');
+
+        const frequency = event.target.getAttribute('data-frequency');
+        calculateEstimate(frequency);
+    }
+});
+
+document.getElementById('estimateForm').addEventListener('click', function(event) {
+    if (event.target.classList.contains('frequency-option')) {
+        const frequency = event.target.getAttribute('data-frequency');
+        calculateEstimate(frequency);
+    }
+});
+
+// Add an event listener to the apartmentLayout dropdown
+document.getElementById('apartmentLayout').addEventListener('change', function() {
+    const selectedFrequency = document.querySelector('.frequency-option.selected').getAttribute('data-frequency');
+    calculateEstimate(selectedFrequency);
+});
+
+calculateEstimate('oneTime');
+
+</script>
